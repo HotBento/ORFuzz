@@ -31,4 +31,3 @@ ORFuzz dataset: [here](ORFuzz_dataset/ORFuzz.csv)
 
 Judge models: [here](model_finetuning)
 
-TODO: This repository is under construction...
