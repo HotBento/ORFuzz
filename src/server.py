@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     quantization_config = QuantoConfig(weights="int8")
     answer_model:PreTrainedModel = AutoModelForCausalLM.from_pretrained("model_finetuning/lora/qwen_answer", torch_dtype="auto",quantization_config=quantization_config, device_map="cuda:0", attn_implementation="eager").eval()
-    toxic_model:PreTrainedModel = AutoModelForCausalLM.from_pretrained("model_finetuning/lora/qwen_answer", torch_dtype="auto",quantization_config=quantization_config, device_map="cuda:0", attn_implementation="eager").eval()
+    toxic_model:PreTrainedModel = AutoModelForCausalLM.from_pretrained("model_finetuning/lora/qwen_toxic", torch_dtype="auto",quantization_config=quantization_config, device_map="cuda:0", attn_implementation="eager").eval()
     eval_tokenizer:PreTrainedTokenizer = AutoTokenizer.from_pretrained(config.model_path, padding_side="left")
 
     qwen_answer_evaluator = QwenAnswerEvaluator()
